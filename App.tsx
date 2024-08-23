@@ -9,22 +9,13 @@ import React, { useState } from 'react';
 
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 function App(): React.JSX.Element {
   const [randomBackground, setRandomBackground] = useState("#FFFFFF")
@@ -65,16 +56,18 @@ function App(): React.JSX.Element {
   */
 
   return (
-    <>
-    <StatusBar backgroundColor={randomBackground}/>
-    <View style={[styles.container, {backgroundColor: randomBackground}]}>
-      <TouchableOpacity>
-        <View style={styles.actionBtn}>
-          <Text style={styles.actionBtnTxt}>Press me</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
-    </>
+    <SafeAreaView>
+      <>
+      <StatusBar backgroundColor={randomBackground}/>
+      <View style={[styles.container, {backgroundColor: randomBackground}]}>
+        <TouchableOpacity onPress={generateColour}>
+          <View style={styles.actionBtn}>
+            <Text style={styles.actionBtnTxt}>Press me</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      </>
+    </SafeAreaView>
   );
 }
 
