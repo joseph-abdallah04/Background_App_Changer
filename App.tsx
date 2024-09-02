@@ -56,7 +56,6 @@ function App(): React.JSX.Element {
   */
 
   return (
-    <SafeAreaView>
       <>
       <StatusBar backgroundColor={randomBackground}/>
       <View style={[styles.container, {backgroundColor: randomBackground}]}>
@@ -67,7 +66,7 @@ function App(): React.JSX.Element {
         </TouchableOpacity>
       </View>
       </>
-    </SafeAreaView>
+// For some reason, having a <SafeAreaView> here bugs the whole app out. Its not needed though, so I removed it.
   );
 }
 
